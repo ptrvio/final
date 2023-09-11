@@ -15,9 +15,9 @@ const Navbar = () => {
     <nav>
       {/* Aqui deberan agregar los liks correspondientes a las rutas definidas */}
       {/* Deberan implementar ademas la logica para cambiar de Theme con el button */}
-      <Link to="/">Inicio</Link>
-      <Link to="/favs" >Favoritos</Link>
-      <Link to="/contact" >Contacto</Link>
+      <Link to="/" style={{background: theme.background, color:theme.font}}>Inicio</Link>
+      <Link to="/favs" style={{background: theme.background, color:theme.font}}>Favoritos</Link>
+      <Link to="/contact" style={{background: theme.background, color:theme.font}}>Contacto</Link>
       <button onClick={handleChangeTheme} style={{background: theme.background, color:theme.font}}>Cambiar Tema</button>
     </nav>
   )

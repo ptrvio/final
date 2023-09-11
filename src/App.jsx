@@ -21,15 +21,15 @@ function App() {
       <div className="App">     
             <ContextGlobal.Provider value={{theme, handleChangeTheme}}>
               <Layout>
-              <Navbar />
-                  <Routes>
-                        <Route path="/" element={<Home />}></Route>
-                        <Route path="contact" element={<Contact />}></Route>
-                        <Route path="/dentist/:id" element={<Detail />}></Route>
-                        <Route path="favs" element={<Favs />}></Route>
-                        <Route path="/*" element={<Navigate to ='/'/>}></Route>
-                  </Routes>          
-              <Footer />
+                <Navbar />
+                <Routes>
+                  <Route path="/" element={<Home />}></Route>
+                  <Route path="contact" element={<Contact />}></Route>
+                  <Route path="/dentist/:id" element={<Detail />}></Route>
+                  <Route path="favs" element={<Favs />}></Route>
+                  <Route path="/*" element={<Navigate to ='/'/>}></Route>        
+                </Routes>          
+                <Footer />
               </Layout>
             </ContextGlobal.Provider>  
 
