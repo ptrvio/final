@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: cadetblue;
 }
 
 code {
@@ -42,7 +43,8 @@ a:hover{
 
 footer {
   display: flex;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: space-between;
   text-align: center;
   padding: 2rem;
   position: relative;

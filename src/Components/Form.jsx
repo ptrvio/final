@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 const Form = () => {
@@ -7,17 +8,23 @@ const Form = () => {
   const [name, setName]= useState('');
   const [email, setEmail]=useState('');
   const [err, setErr] = useState('');
+  const [info, setInfo] = useState(false);
+
+  const navigate = useNavigate()
 
   const handleSubmit = (event) =>{
+
     event.preventDefault();
 
     if (!name.trim() || !email.trim()) {
         setErr('Los campos deben estar completos');
-    } else if (name.length < 3 || name.indexOf(" ") === 0 || email.length < 6) {
-        setErr('Por favor chequea que la información sea la correcta');    
+      
+    } else if (name.length < 5 || name.indexOf(" ") === 0 || email.length < 6) {
+        setErr('Por favor verifique su información nuevamente');
+          
     } else {
         setErr('');
-        alert('Se envio su solicitud');    
+        setInfo(true);    
     }
 }
 
@@ -34,9 +41,12 @@ const Form = () => {
         </label>
         <div>
           <button className="" type="submit">Enviar</button>
+          <button onClick={() => navigate("/home")}>Volver</button>
         </div>
-        {err && <p className="err">{err}</p>} 
+        {err && <p className="err">{err}</p>}
+        {info && <p className="info">Gracias {name}, te contactaremos cuando antes vía mail</p>} 
       </form>
+      
     </>
   );
 };
