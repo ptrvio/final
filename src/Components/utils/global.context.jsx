@@ -1,8 +1,29 @@
-/*import { createContext } from "react";
+import { createContext } from "react";
 
-export const initialState = {theme: "", data: []}
+export const themes = {
 
-export const ContextGlobal = createContext(undefined);
+  light:{
+    font: "black",
+    background: "white"
+  },
+
+  dark:{
+    font: "white",
+    background: "black"
+  }
+}
+
+
+export const initialState = {
+  themes: themes.light, 
+  data: []
+}
+
+
+const ContextGlobal = createContext(initialState);
+
+export default ContextGlobal; 
+
 
 export const ContextProvider = ({ children }) => {
   //Aqui deberan implementar la logica propia del Context, utilizando el hook useMemo
@@ -12,7 +33,7 @@ export const ContextProvider = ({ children }) => {
       {children}
     </ContextGlobal.Provider>
   );
-};*/
+};
 
 
 
